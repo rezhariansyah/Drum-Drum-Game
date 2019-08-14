@@ -90,7 +90,6 @@ class MenuDrawer extends Component {
               })
             }
           />
-          {this.navLink("Settings", "Settings")}
           {this.state.token == null ? (
             <TouchableOpacity
               style={styles.buttonContainer}
