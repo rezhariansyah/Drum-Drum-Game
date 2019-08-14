@@ -10,21 +10,29 @@ import {
   Alert
 } from "react-native";
 import BackToHome from "../../components/BackToHome";
+import { connect } from "react-redux";
+import { registerUser } from "../../config/redux/Actions/user";
 
-export default class Register extends Component {
+class Register extends Component {
   constructor(props) {
     super(props);
     state = {
       email: "",
       password: "",
-      ktp: "",
       fullname: ""
     };
   }
 
-  onClickListener = viewId => {
-    Alert.alert("Alert", "Button pressed " + viewId);
-  };
+  register = async () => {
+    let data = {
+      email: this.state.email,
+      fullname: this.state.fullname,
+      password: this.state.password,
+    }
+    console.log(data)
+    await this.props.dispatch(registerUser(data))
+    this.props.navigation.navigate('Login')
+  }
 
   render() {
     return (
@@ -65,19 +73,6 @@ export default class Register extends Component {
         <View style={styles.inputContainer}>
           <Image
             style={styles.inputIcon}
-            source={require("../../assets/img/identification.png")}
-          />
-          <TextInput
-            style={styles.inputs}
-            placeholder="ID Card"
-            underlineColorAndroid="transparent"
-            onChangeText={ktp => this.setState({ ktp })}
-          />
-        </View>
-
-        <View style={styles.inputContainer}>
-          <Image
-            style={styles.inputIcon}
             source={{
               uri: "https://png.icons8.com/key-2/ultraviolet/50/3498db"
             }}
@@ -93,7 +88,7 @@ export default class Register extends Component {
 
         <TouchableHighlight
           style={[styles.buttonContainer, styles.loginButton]}
-          onPress={() => this.onClickListener("register")}
+          onPress={() => this.register()}
         >
           <Text style={styles.loginText}>Register</Text>
         </TouchableHighlight>
@@ -101,6 +96,13 @@ export default class Register extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    userList: state.userList
+  };
+};
+export default connect(mapStateToProps)(Register);
 
 const styles = StyleSheet.create({
   logoUser: {

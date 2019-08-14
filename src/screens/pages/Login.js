@@ -10,28 +10,42 @@ import {
   Alert
 } from "react-native";
 import BackToHome from "../../components/BackToHome";
+import { connect } from "react-redux";
+import { userLogin } from "../../config/redux/Actions/user";
+import { withNavigation } from "react-navigation";
 
-export default class LoginView extends Component {
+class Login extends Component {
+  state = {
+    data: [],
+    email: "",
+    password: ""
+  };
   constructor(props) {
     super(props);
-    state = {
-      email: "",
-      password: ""
-    };
   }
 
-  onClickListener = viewId => {
-    Alert.alert("Alert", "Button pressed " + viewId);
-  };
-
   render() {
+    const Login = () => {
+      this.state.data.push({
+        email: this.state.email,
+        password: this.state.password
+      });
+      add();
+    };
+    let add = async () => {
+      await this.props.dispatch(userLogin(this.state.data[0])).then(() => {
+        Alert.alert("Login", "Login Success", [
+          { text: "OK", onPress: () => this.props.navigation.navigate("Home") }
+        ]);
+      });
+    };
     return (
       <View style={styles.container}>
         <BackToHome navigation={this.props.navigation} />
         <View>
           <Image
             style={styles.logoUser}
-            source={require("../../assets/img/users.png")}
+            source={require("../../assets/img/drum.png")}
           />
         </View>
 
@@ -67,28 +81,29 @@ export default class LoginView extends Component {
 
         <TouchableHighlight
           style={[styles.buttonContainer, styles.loginButton]}
-          onPress={() => this.onClickListener("login")}
+          onPress={Login.bind(this)}
         >
           <Text style={styles.loginText}>Login</Text>
         </TouchableHighlight>
 
         <TouchableHighlight
           style={styles.buttonContainer}
-          onPress={() => this.onClickListener("restore_password")}
+          onPress={() => this.props.navigation.navigate("Register")}
         >
-          <Text>Forgot your password?</Text>
-        </TouchableHighlight>
-
-        <TouchableHighlight
-          style={styles.buttonContainer}
-          onPress={() => this.props.navigation.navigate('Register')}
-        >
-          <Text style={{color:'#15A5E7'}}>Register</Text>
+          <Text style={{ color: "#15A5E7" }}>Register</Text>
         </TouchableHighlight>
       </View>
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    userLogin: state.userLogin
+  };
+};
+
+export default connect(mapStateToProps)(withNavigation(Login));
 
 const styles = StyleSheet.create({
   logoUser: {

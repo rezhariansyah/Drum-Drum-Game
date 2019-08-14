@@ -1,17 +1,27 @@
 import React, { Component } from "react";
 import { StyleSheet } from "react-native";
-import { Icon } from "native-base";
+import { TouchableOpacity, Image, View } from "react-native";
 
 class MenuButton extends Component {
   render() {
     return (
-      <Icon
-        name="md-menu"
-        color="#000000"
-        size={32}
-        style={styles.menuIcon}
-        onPress={() => this.props.navigation.toggleDrawer()}
-      />
+      <View>
+        <TouchableOpacity
+          style={styles.profilnavbar}
+          onPress={() => this.props.navigation.toggleDrawer()}
+        >
+          <Image
+            style={{
+              flex:1,
+              width: 32,
+              height: 32,
+              borderRadius: 100,
+              overflow: "hidden"
+            }}
+            source={require("../assets/img/man.png")}
+          />
+        </TouchableOpacity>
+      </View>
     );
   }
 }
@@ -19,10 +29,11 @@ class MenuButton extends Component {
 export default MenuButton;
 
 const styles = StyleSheet.create({
-  menuIcon: {
-    zIndex: 9,
+  profilnavbar: {
+    top: 5,
+    left: 5,
     position: "absolute",
-    top: 20,
-    left: 20,
+    padding: 11,
+    flex:1
   }
 });
