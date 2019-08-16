@@ -57,10 +57,8 @@ class MenuDrawer extends Component {
         ]);
       });
     };
-    console.log(this.state.token)
     return (
-      <View style={styles.container}>
-        
+      <View style={styles.container}>       
         <View style={styles.topLink}>
           <View style={styles.profile}>
             <View style={styles.imageView}>
@@ -75,8 +73,8 @@ class MenuDrawer extends Component {
                 </View>
               ) : (
                 <View>
-                  <Text style={{ color: "white" }}>{this.state.name}</Text>
-                  <Text style={{ color: "white" }}>{this.state.email}</Text>
+                  <Text style={{ color: "white", textAlign:"center" }}>{this.state.name}</Text>
+                  <Text style={{ color: "white", textAlign:"center" }}>{this.state.email}</Text>
                 </View>
               )}
             </View>

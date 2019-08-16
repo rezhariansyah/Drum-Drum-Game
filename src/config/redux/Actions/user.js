@@ -2,7 +2,6 @@ import Axios from "axios";
 import urlApi from "../../urlAPI/urlAPI";
 import { AsyncStorage } from "react-native";
 
-
 export const registerUser = data => {
   // console.log(`dicoba dicoba`, data[0])
   return {
@@ -34,3 +33,11 @@ export const userLogin = (data) => {
   }
 
 };
+
+//get all user
+export const highestScore = () => {
+  return {
+    type : "HIGHEST_SCORE",
+    payload : Axios.get(urlApi + '/score')
+  }
+}

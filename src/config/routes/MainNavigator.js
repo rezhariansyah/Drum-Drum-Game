@@ -11,7 +11,7 @@ import LoginScreen from "../../screens/pages/Login";
 import { Platform, Dimensions } from "react-native";
 import MenuDrawer from "../../components/MenuDrawer";
 import { Icon } from "native-base";
-import HistoryScreen from '../../screens/pages/History';
+import Leaderboard from '../../screens/pages/Leaderboard';
 import Register from "../../screens/pages/Register";
 
 const WIDTH = Dimensions.get("window").width;
@@ -41,8 +41,8 @@ const AppTabNavigator = createMaterialTopTabNavigator(
         )
       }
     },
-    History: {
-      screen: HistoryScreen,
+    Leaderboard: {
+      screen: Leaderboard,
       navigationOptions: {
         tabBarIcon: ({ tintColor }) => (
           <Icon name="book" color={tintColor} size={24} />
@@ -85,8 +85,8 @@ const AppStackNavigator = createStackNavigator(
     Login: {
       screen: LoginScreen
     },
-    History: {
-      screen: HistoryScreen
+    Leaderboard: {
+      screen: Leaderboard
     },
     Register: {
       screen : Register
