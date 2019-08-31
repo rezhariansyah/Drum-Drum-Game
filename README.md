@@ -15,10 +15,10 @@ Mobile game app, simple drum game with counter score and leaderboard
 - leaderboard global high scores
 
 ### Screens shot
-<p align="left">
-![alt text](https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/profile.png)
-![alt text](https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/gameScreen.png)
-![alt text](https://raw.githubusercontent.com/JoeRoddy/react-native-leaderboard/HEAD/example.gif)
+<p align="center">
+![alt text]("https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/profile.png")
+![alt text]("https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/gameScreen.png")
+![alt text]("https://raw.githubusercontent.com/JoeRoddy/react-native-leaderboard/HEAD/example.gif")
 </p>
 
 ## Contributor
