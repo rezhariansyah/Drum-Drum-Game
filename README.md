@@ -1,5 +1,5 @@
 ### Simple Library
-Library mobile app that provides books with several categories, user can borrow and read the details of each book 
+Mobile game app, simple drum game with counter score and leaderboard
 
 ### App requires before running :
 - NodeJS v8+
@@ -7,7 +7,22 @@ Library mobile app that provides books with several categories, user can borrow 
 - Android studio
 - sdk
 
-### SCREENSHOTS
-![alt text](https://raw.githubusercontent.com/rezhariansyah/React-Native-Book-Library-Front-End/master/src/assets/documentations/Screenshot_1564671453.png)
-![alt text](https://raw.githubusercontent.com/rezhariansyah/React-Native-Book-Library-Front-End/master/src/assets/documentations/Screenshot_1564671591.png)
-![alt text](https://raw.githubusercontent.com/rezhariansyah/React-Native-Book-Library-Front-End/master/src/assets/documentations/Screenshot_1564671668.png)
+### Feature
+- user login and register
+- authentication and authorizatoin
+- sound audio when user press each drum
+- score counter gameplay
+- leaderboard global high scores
+
+### Screens shot
+<p align="left">
+![alt text](https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/profile.png)
+![alt text](https://raw.githubusercontent.com/rezhariansyah/Drum-Drum-Game-React-Native/master/src/assets/img/gameScreen.png)
+![alt text](https://raw.githubusercontent.com/JoeRoddy/react-native-leaderboard/HEAD/example.gif)
+</p>
+
+## Contributor
+<p align="center">
+  <img src="https://avatars0.githubusercontent.com/u/42859545?s=460&v=4" width="100" alt="accessibility text">
+</p> 
+
