@@ -22,7 +22,7 @@ Mobile game app, simple drum game with counter score and leaderboard
 </p>
 
 ## Contributor
-<p align="center">
+<p align="left">
   <img src="https://avatars0.githubusercontent.com/u/42859545?s=460&v=4" width="100" alt="accessibility text">
 </p> 
 
